@@ -25,13 +25,6 @@ if (process.env.NODE_ENV === "development"){
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
 
-
-
-
-
-
-
-
 //routes
 app.use("/", Router)
 
