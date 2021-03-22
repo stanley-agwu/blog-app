@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "App for posting and reading blogs",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "prodStart": "cross-env NODE_ENV=prodution node server.js",
     "devStart": "cross-env NODE_ENV=development nodemon server.js"
