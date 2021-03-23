@@ -1,12 +1,16 @@
 const express = require("express")
 const router = express.Router()
 
-//const blogs = require("./blogsData")
+const blogs = require("./blogsData")
 
 router.get("/", (req, res) => {
-    // const blogs = await Blog.find().sort({ createdAt: "desc"})
-    res.render("index")
+    res.render("index", {blogs: blogs})
 })
+
+// router.get("/", (req, res) => {
+//     // const blogs = await Blog.find().sort({ createdAt: "desc"})
+//     res.render("index")
+// })
 
 // router.get("/new", (req, res) =>{
 //     res.render("blogs/new", { blog: new Blog()})
