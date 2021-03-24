@@ -6,70 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Blog Home</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-wrapper blue-grey darken-1">
-            <div class="brand-logo navLogo">
-                <a href="/"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-dice-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
-                    <circle cx="4" cy="4" r="1.5"/>
-                    <circle cx="12" cy="4" r="1.5"/>
-                    <circle cx="12" cy="12" r="1.5"/>
-                    <circle cx="4" cy="12" r="1.5"/>
-                    <circle cx="8" cy="8" r="1.5"/>
-                    </svg>
-                </a>
-            </div>
-            <ul id="nav-mobile" class="right hide-on-med-and-down nav-items">
-                <li><small><a href="#">5 Stack Blog</a></small></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="main container">
-        <div class="cards">
-            <h2 class="mt-4">Blogs Home</h2>
-            <a href="#" class="waves-effect waves-light btn #009688 teal">New Blog</a>
-            <% blogs.forEach(blog => { %>
-                
-            <% if (blog) { %>
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text card-item">
-                            <h6 class="card-title"><%= blog.title %></h6>
-                            <h6 class="card-subtitle"><%= blog.createdAt.toLocaleDateString() %></h6>
-                            <p class="card-text"><%= blog.description %></p>
-                            <p class="card-text"><%= blog.markdown %></p>
-                            <a href="/blog/<%= blog.id %>" class="waves-effect waves-light btn #009688 teal">Read More</a>
-                            <a href="/edit/<%= blog.id %>" class="waves-effect waves-light btn #009688 teal">Edit</a>
-                            <a href="/blog/<%= blog.id %>" class="waves-effect waves-light btn #009688 teal">Delete</a>
-                        </div>
-                    </div>
+    <div class="main">
+        <nav class="header">
+            <div class="nav-wrapper blue-grey darken-1 navbar">
+                <div class="brand-logo navLogo">
+                    <a href="#"><i class="material-icons icon">casino</i></a>
+                    <!-- <a href="/"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-dice-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+                        <circle cx="4" cy="4" r="1.5"/>
+                        <circle cx="12" cy="4" r="1.5"/>
+                        <circle cx="12" cy="12" r="1.5"/>
+                        <circle cx="4" cy="12" r="1.5"/>
+                        <circle cx="8" cy="8" r="1.5"/>
+                        </svg>
+                    </a> -->
+                    <small><a href="#">5 Stack Blog</a></small>
                 </div>
+                <ul id="nav-mobile" class="right hide-on-med-and-down nav-items">
+                    <li><a class="nav-item" href="#">Home</a></li>
+                    <li><a class="nav-item" href="#">About</a></li>
+                    <li><a class="nav-item" href="#">Contact</a></li>
+                </ul>
             </div>
-            <% } else { %>
-                <<div class="row">
+        </nav>
+        <div class="section">
+            <div class="cards">
+                <h2 class="mt-4">Blogs Home</h2>
+                <a href="#" class="waves-effect waves-light btn #009688 teal">New Blog</a>
+                <% blogs.forEach(blog => { %>
+                    
+                <% if (blog) { %>
+                <div class="row">
                     <div class="col s12 m6">
                         <div class="card blue-grey darken-1">
-                            <div class="card-content white-text">
-                                <p class="card-text">There are currently no blogs.</p>
+                            <div class="card-content white-text card-item">
+                                <h6 class="card-title"><%= blog.title %></h6>
+                                <h6 class="card-subtitle"><%= blog.createdAt.toLocaleDateString() %></h6>
+                                <p class="card-text"><%= blog.description %></p>
+                                <p class="card-text"><%= blog.markdown %></p>
+                                <a href="/blog/<%= blog.id %>" class="waves-effect waves-light btn #009688 teal">Read More</a>
+                                <a href="/edit/<%= blog.id %>" class="waves-effect waves-light btn #009688 teal">Edit</a>
+                                <a href="/blog/<%= blog.id %>" class="waves-effect waves-light btn #009688 teal">Delete</a>
                             </div>
                         </div>
                     </div>
                 </div>
-              <% } %>
-            <% }) %>
+                <% } else { %>
+                    <<div class="row">
+                        <div class="col s12 m6">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-content white-text">
+                                    <p class="card-text">There are currently no blogs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                <% }) %>
+            </div>
         </div>
-
-    </div>
-    <footer>
-        <a href="#" >5 Stack Blog</a> &copy 2021
-    </footer>
+        <footer class="footer">
+            <a href="#" >5 Stack Blog</a> &copy 2021
+        </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>  
 </body>
 </html>
