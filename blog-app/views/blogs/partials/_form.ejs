@@ -1,37 +1,37 @@
-    <div class="row">
-        <div class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                <input id="title" type="text" class="validate" value="<%= blog.title %>" required />
-                <label for="title">Title</label>
-                </div>
+<div class="row">
+    <div class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="title" type="text" name="title" class="validate" value="<%= blog.title %>" required />
+            <label for="title">Title</label>
             </div>
-            <div class="row">
-                <form class="col s12">
+        </div>
+        <div class="row">
+            <div class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
                     <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="description icon_prefix2" name="description" class="materialize-textarea" required><%= blog.description %></textarea>
+                    <textarea name="description" class="materialize-textarea" required><%= blog.description %></textarea>
                     <label for="icon_prefix2">Description</label>
                     </div>
                 </div>
-                </form>
             </div>
-            <div class="row">
-                <form class="col s12">
+        </div>
+        <div class="row">
+            <div class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
                     <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="markdown icon_prefix2" name="markdown" class="materialize-textarea" required><%= blog.markdown %></textarea>
-                    <label for="icon_prefix2">Markdown</label>
+                    <textarea name="markdown" class="materialize-textarea" required><%= blog.markdown %></textarea>
+                    <label for="icon_prefix2">MarkDown</label>
                     </div>
                 </div>
-                </form>
-            </div>
-            <div class="button-group">
-                <a class="btn btn-large #757575 grey darken-1 button" href="/" >Cancel</a>
-                <button class="btn waves-effect waves-light btn-large button" type="submit">Save</button>
             </div>
         </div>
+        <div class="button-group">
+            <a class="btn btn-large #757575 grey darken-1 button" href="/" >Cancel</a>
+            <button class="btn waves-effect waves-light btn-large button" type="submit">Save</button>
+        </div>
     </div>
+</div>
         

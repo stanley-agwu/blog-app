@@ -1,9 +1,11 @@
 const express = require("express")
 const path = require("path")
+const bodyParser = require("body-parser")
 const morgan = require("morgan")
 const dotenv = require("dotenv")
 const Router = require("./routes/index")
 const connectDB = require("./config/db")
+
 
 // Load config
 dotenv.config({ path: "./config/config.env"})

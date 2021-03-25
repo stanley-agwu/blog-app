@@ -26,10 +26,11 @@ router.post("/", async (req, res) => {
         description: req.body.description,
         markdown: req.body.markdown
     })
+    console.log(req.body)
     try {
         blog = await blog.save()
         console.log(blog)
-        res.redirect(`/blog/${blog.id}`, { blog: blog})
+        res.redirect(`/blog/${blog.id}`)
     } catch (error) {
         console.error(error)
         res.redirect("/")
