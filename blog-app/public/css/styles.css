@@ -9,25 +9,25 @@ body {
 }
 .main{
     display: grid;
-    grid-template-rows: 60px auto 10px;
+    grid-template-rows: 60px auto 40px;
     min-height: 1vh;
     width: 100%;
 }
 .card-item{
     width: 100%;
     font-size: 1.4em;
-    font-weight: 300;
+    font-weight: 100;
 }
 .subtitle{
-    font-size: 1em;
+    font-size: 1.2em;
 }
 .title{
-    font-weight: 400;
-    font-size: 1.4em;
+    font-weight: 600;
+    font-size: 1.6em;
 }
 .footer{
     justify-self: center;
-    bottom: 5px;
+    bottom: 2px;
     font-size: 1.2em;
 }
 .navLogo .icon{

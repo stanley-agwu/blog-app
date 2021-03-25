@@ -6,6 +6,9 @@ const blogs = require("./blogsData")
 router.get("/", (req, res) => {
     res.render("index", {blogs: blogs})
 })
+router.get("/new", (req, res) =>{
+    res.render("blogs/new")
+})
 
 // router.get("/", (req, res) => {
 //     // const blogs = await Blog.find().sort({ createdAt: "desc"})
