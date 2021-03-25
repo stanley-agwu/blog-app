@@ -20,7 +20,7 @@ router.get("/blog/:id", async (req, res) =>{
 //     let blog = await Blog.findById(req.params.id)
 //     res.render("blogs/edit", { blog: blog} )
 // })
-router.post("/", async (req, res) =>{
+router.post("/", async (req, res) => {
     let blog = await new Blog({
         title: req.body.title,
         description: req.body.description,
