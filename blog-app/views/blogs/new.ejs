@@ -17,28 +17,30 @@
             <nav>
                 <div class="nav-wrapper blue-grey darken-1 navbar">
                     <div class="brand-logo navLogo">
-                        <a href="#"><i class="material-icons icon">casino</i></a>
-                        <small><a href="#">5 Stack Blog</a></small>
+                        <a href="/"><i class="material-icons icon">casino</i></a>
+                        <small><a href="/">5 Stack Blog</a></small>
                     </div>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down nav-items">
-                        <li><a class="nav-item" href="#">Home</a></li>
+                        <li><a class="nav-item" href="/">Home</a></li>
                         <li><a class="nav-item" href="#">About</a></li>
                         <li><a class="nav-item" href="#">Contact</a></li>
                     </ul>
                 </div>
             </nav>
             <ul class="sidenav" id="mobile-demo">
-                <li><a class="nav-item" href="#">Home</a></li>
+                <li><a class="nav-item" href="/">Home</a></li>
                 <li><a class="nav-item" href="#">About</a></li>
                 <li><a class="nav-item" href="#">Contact</a></li>
             </ul>
         </div>
         <div class="section">
-            <h2 class="headers">Create a new blog</h2>
-            <form action="" method="POST">
-                <%- include("partials/_form") %>
-            </form>
+            <div class="new-blog container">
+                <h2 class="headers">Create a new blog</h2>
+                <form action="" method="POST">
+                    <%- include("partials/_form") %>
+                </form>
+            </div>
             
         </div>
         <footer class="footer">
