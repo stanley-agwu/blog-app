@@ -1,10 +1,9 @@
-
 <div class="form">
     <div class="row">
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s12">
-                <input id="title" type="text" class="validate">
+                <input id="title" type="text" class="validate" value="<%= blog.title %>" required />
                 <label for="title">Title</label>
                 </div>
             </div>
@@ -13,7 +12,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                     <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    <textarea id="description icon_prefix2" name="description" class="materialize-textarea" required><%= blog.description %></textarea>
                     <label for="icon_prefix2">Description</label>
                     </div>
                 </div>
@@ -24,7 +23,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                     <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    <textarea id="markdown icon_prefix2" name="markdown" class="materialize-textarea" required><%= blog.markdown %></textarea>
                     <label for="icon_prefix2">Markdown</label>
                     </div>
                 </div>
@@ -33,7 +32,7 @@
         </form>
         <div class="button-group">
             <a class="btn btn-large #757575 grey darken-1 button" href="/" >Cancel</a>
-            <button class="btn waves-effect waves-light btn-large button" type="submit" name="action">Submit</button>
+            <button class="btn waves-effect waves-light btn-large button" type="submit" name="action">Save</button>
         </div>
     </div>
 </div>

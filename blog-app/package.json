@@ -4,8 +4,8 @@
   "description": "App for posting and reading blogs",
   "main": "server.js",
   "scripts": {
-    "prodStart": "cross-env NODE_ENV=prodution node server.js",
-    "devStart": "cross-env NODE_ENV=development nodemon server.js"
+    "prod": "cross-env NODE_ENV=prodution node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js"
   },
   "keywords": [],
   "author": "Stanley Agwu",
@@ -15,6 +15,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "method-override": "^3.0.0",
     "mongoose": "^5.12.1"
   },
   "devDependencies": {
