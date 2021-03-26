@@ -23,14 +23,14 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down nav-items">
                         <li><a class="nav-item" href="/">Home</a></li>
-                        <li><a class="nav-item" href="#">About</a></li>
+                        <li><a class="nav-item" href="/new">New Blog</a></li>
                         <li><a class="nav-item" href="#">Contact</a></li>
                     </ul>
                 </div>
             </nav>
             <ul class="sidenav" id="mobile-demo">
                 <li><a class="nav-item" href="/">Home</a></li>
-                <li><a class="nav-item" href="#">About</a></li>
+                <li><a class="nav-item" href="/new">New Blog</a></li>
                 <li><a class="nav-item" href="#">Contact</a></li>
             </ul>
         </div>
@@ -46,7 +46,7 @@
                         <div class="col s12">
                             <div class="card blue-grey darken-1">
                                 <div class="card-content white-text card-item">
-                                    <h6 class="title"><%= blog.title %></h6>
+                                    <h2 class="headers"><%= blog.title %></h2>
                                     <h6 class="subtitle"><%= blog.createdAt.toLocaleDateString() %></h6>
                                     <p class="card-text"><%= blog.description %></p>
                                     <p class="card-text"><%- blog.sanitizedHtml %></p>
