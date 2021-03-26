@@ -49,7 +49,7 @@
                                     <h6 class="title"><%= blog.title %></h6>
                                     <h6 class="subtitle"><%= blog.createdAt.toLocaleDateString() %></h6>
                                     <p class="card-text"><%= blog.description %></p>
-                                    <p class="card-text"><%= blog.markdown %></p>
+                                    <p class="card-text"><%- blog.sanitizedHtml %></p>
                                     <div class="buttons">
                                         <a href="/blog/<%= blog.slug %>" class="waves-effect waves-light btn #009688 teal button">Read More</a>
                                         <a href="/edit/<%= blog.slug %>" class="waves-effect waves-light btn #0277bd light-blue darken-3 button">Edit</a>

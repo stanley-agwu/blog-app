@@ -43,7 +43,7 @@
                                 <h2 class="headers"><%= blog.title %></h2>
                                 <h6 class="subtitle"><%= blog.createdAt.toLocaleDateString() %></h6>
                                 <p class="card-text"><%= blog.description %></p>
-                                <p class="card-text"><%= blog.markdown %></p>
+                                <p class="card-text"><%- blog.sanitizedHtml %></p>
                                 <a href="/edit/<%= blog.id %>" class="waves-effect waves-light btn #0277bd light-blue darken-3">Edit</a>
                                 <a href="/blog/<%= blog.id %>" class="waves-effect waves-light btn #c62828 red darken-3">Delete</a>
                             </div>
