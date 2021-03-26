@@ -18,35 +18,33 @@ const editBlog = async (req, res) =>{
     let blog = await Blog.findById(req.params.id)
     res.render("blogs/edit", { blog: blog })
 }
-createBlog = async (req, res) => {
-    let blog = await new Blog({
-        title: req.body.title,
-        description: req.body.description,
-        markdown: req.body.markdown
-    })
-    try {
-        blog = await blog.save()
-        res.redirect(`/blog/${blog.slug}`)
-    } catch (error) {
-        console.error(error)
-        res.render("blogs/new", { blog: blog})
-    }
-}
-const putBlog = async (req, res) => {
-    let blog = await Blog.findById(req.params.id)
+const createAndEditBlog = (path) => {
+    return async (req, res) => {
+        let blog = req.blog
         blog.title = req.body.title
-        blog.description = req.body.description,
+        blog.description = req.body.description
         blog.markdown = req.body.markdown
     try {
         blog = await blog.save()
         res.redirect(`/blog/${blog.slug}`)
     } catch (error) {
         console.error(error)
-        res.render("blogs/edit", { blog: blog})
+        res.render(`blogs/${path}`, { blog: blog})
+        }
     }
 }
+const createBlog = async (req, res, next) => {
+    req.blog = await new Blog()
+    next()  
+}
+
+const putBlog = async (req, res, next) => {
+    req.blog = await Blog.findById(req.params.id)
+    next() 
+}
+
 const deleteBlog = async (req, res) =>{
     await Blog.findByIdAndDelete(req.params.id)
     res.redirect("/")
 }
-module.exports = {allBlogs, newBlog, blog, editBlog, createBlog, putBlog, deleteBlog}
+module.exports = {allBlogs, newBlog, blog, editBlog, createBlog, putBlog, deleteBlog, createAndEditBlog}
