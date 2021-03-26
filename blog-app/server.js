@@ -5,6 +5,7 @@ const morgan = require("morgan")
 const dotenv = require("dotenv")
 const Router = require("./routes/index")
 const connectDB = require("./config/db")
+const methodOverride = require("method-override")
 
 
 // Load config
@@ -22,6 +23,9 @@ app.set("view engine", "ejs")
 if (process.env.NODE_ENV === "development"){
     app.use(morgan("dev"))
 }
+
+//Method Override to Form
+app.use(methodOverride("_method"))
 
 //Body Parser
 app.use(express.urlencoded({ extended: false}))

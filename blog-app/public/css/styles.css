@@ -12,26 +12,12 @@ body {
     grid-template-rows: 60px auto 40px;
     box-sizing: border-box;
     min-height: 98vh;
-    min-width: 98vw;
+    width: 98vw;
 }
-.card-item{
+.navbar {
     width: 100%;
-    font-size: 1.4em;
-    font-weight: 100;
 }
-.subtitle{
-    font-size: 1.2em;
-}
-.title{
-    font-weight: 600;
-    font-size: 1.6em;
-}
-.footer{
-    justify-self: center;
-    bottom: 2px;
-    font-size: 1.2em;
-}
-.navLogo .icon{
+.nav-logo .icon{
     font-size: 1.8em;
 }
 .nav-items{
@@ -43,5 +29,26 @@ body {
 .nav-items .nav-item {
     font-size: 1.5em;
 }
-
+.card-item{
+    width: 100%;
+    font-size: 1.4em;
+}
+.subtitle{
+    font-size: 1.2em;
+}
+.title{
+    font-weight: 600;
+    font-size: 1.6em;
+}
+.buttons{
+    display: flex;
+}
+.buttons .button{
+    margin: 10px 10px 0 0;
+}
+.footer{
+    justify-self: center;
+    bottom: 2px;
+    font-size: 1.2em;
+}
 
