@@ -13,13 +13,14 @@ router.get("/new", (req, res) =>{
 })
 router.get("/blog/:id", async (req, res) =>{
     let blog = await Blog.findById(req.params.id)
+    console.log(req.params)
     if (blog === null || !blog) res.redirect("/")
     res.render("blogs/blog", { blog: blog} )
 })
-// router.get("/edit/:id", async (req, res) =>{
-//     let blog = await Blog.findById(req.params.id)
-//     res.render("blogs/edit", { blog: blog} )
-// })
+router.get("/edit/:id", async (req, res) =>{
+    let blog = await Blog.findById(req.params.id)
+    res.render("blogs/edit", { blog: blog} )
+})
 router.post("/", async (req, res) => {
     let blog = await new Blog({
         title: req.body.title,
@@ -35,8 +36,6 @@ router.post("/", async (req, res) => {
         console.error(error)
         res.redirect("/")
     }
-    
-
 })
 
 module.exports = router
