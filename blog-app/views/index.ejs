@@ -52,7 +52,7 @@
                                     <p class="card-text"><%- blog.sanitizedHtml %></p>
                                     <div class="buttons">
                                         <a href="/blog/<%= blog.slug %>" class="waves-effect waves-light btn #009688 teal button">Read More</a>
-                                        <a href="/edit/<%= blog.slug %>" class="waves-effect waves-light btn #0277bd light-blue darken-3 button">Edit</a>
+                                        <a href="/edit/<%= blog.id %>" class="waves-effect waves-light btn #0277bd light-blue darken-3 button">Edit</a>
                                         <form action="/blog/<%= blog.id %>?_method=DELETE" method="POST">
                                             <button type="submit" class="waves-effect waves-light btn #c62828 red darken-3 button">Delete</button>
                                         </form>

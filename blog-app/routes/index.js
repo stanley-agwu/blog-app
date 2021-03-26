@@ -13,13 +13,12 @@ router.get("/new", (req, res) =>{
 })
 router.get("/blog/:slug", async (req, res) =>{
     let blog = await Blog.findOne({ slug: req.params.slug })
-    console.log(req.params)
     if (blog === null || !blog) res.redirect("/")
     res.render("blogs/blog", { blog: blog} )
 })
-router.get("/edit/:slug", async (req, res) =>{
-    let blog = await Blog.findById(req.params.slug)
-    res.render("blogs/edit", { blog: blog} )
+router.get("/edit/:id", async (req, res) =>{
+    let blog = await Blog.findById(req.params.id)
+    res.render("blogs/edit", { blog: blog })
 })
 router.post("/", async (req, res) => {
     let blog = await new Blog({
@@ -27,14 +26,25 @@ router.post("/", async (req, res) => {
         description: req.body.description,
         markdown: req.body.markdown
     })
-    console.log(req.body)
     try {
         blog = await blog.save()
-        console.log(blog)
         res.redirect(`/blog/${blog.slug}`)
     } catch (error) {
         console.error(error)
-        res.redirect("/")
+        res.render("blogs/new", { blog: blog})
+    }
+})
+router.put("/:id", async (req, res) => {
+    let blog = await Blog.findById(req.params.id)
+        blog.title = req.body.title
+        blog.description = req.body.description,
+        blog.markdown = req.body.markdown
+    try {
+        blog = await blog.save()
+        res.redirect(`/blog/${blog.slug}`)
+    } catch (error) {
+        console.error(error)
+        res.render("blogs/edit", { blog: blog})
     }
 })
 router.delete("/blog/:id", async (req, res) =>{

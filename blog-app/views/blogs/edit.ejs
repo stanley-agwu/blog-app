@@ -37,7 +37,7 @@
         <div class="section">
             <div class="new-blog container">
                 <h2 class="headers">Edit blog</h2>
-                <form action="/" method="POST">
+                <form action="/<%= blog.id %>?_method=PUT" method="POST">
                     <%- include("partials/_form") %>
                 </form>
             </div>
